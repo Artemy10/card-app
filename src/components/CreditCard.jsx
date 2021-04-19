@@ -21,13 +21,14 @@ export default class CreditCard extends Component {
     render() {
         const cardInfo = <p className="card-info">Secured credit cards are a type of credit card where the cardholder secures the card with a security deposit.</p>
         const bankLogo = <img className="bank-logo" src="/images/banklogo.png" alt="" />;
+        const cardNumber = this.props.cardNumber;
         return (
             <div id="card" onClick={this.flipTheCard} className="credit-card">
                 <div className="flipper">
                     <div className="front-card">
                         <CardName />
                         <CardConnection />
-                        <CardNumber />
+                        <CardNumber cardNumber={cardNumber} />
                         <CardFooter />
                         <img className="card-fone" src="/images/Vector.png" alt="" />
                     </div>
