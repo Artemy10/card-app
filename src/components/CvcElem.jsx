@@ -5,8 +5,9 @@ export default class CvcElem extends Component {
         return (
             <div className="cvc-elem">
                 <span>CVC</span>
-                <span className="cvc-code">321</span>
+                { this.props.cvcCode === '' ? <span className="cvc-code-empty">***</span> : <span className="cvc-code">{ this.props.cvcCode }</span> }
             </div>
         )
     }
 }
+// -- ||

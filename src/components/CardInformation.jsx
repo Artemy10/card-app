@@ -11,8 +11,7 @@ export default class CardInformation extends Component {
     constructor(props) {
         super(props)
     
-        this.sendForm = this.sendForm.bind(this);
-        // this.sendNumber = this.sendNumber.bind(this);
+        this.sendForm = this.sendForm.bind(this); // change name of functions and logistic !!!!
     }
 
     sendForm(e) {
@@ -24,22 +23,25 @@ export default class CardInformation extends Component {
     }
 
     render() {
-        // const cardNumber = this.props.cardNumberValue;
         return (
-            <form onSubmit={this.sendForm} id="cardInfo">
+            <form onSubmit={ this.sendForm } id="cardInfo">
                 <Input type="text" name="cardNumber" 
-                value={this.props.valueNumber} 
-                onChange={this.handleInputChange}
-                format={ CardInformation.PATTERNS.CARD } />
+                onChange={ this.handleInputChange }
+                format={ CardInformation.PATTERNS.CARD }
+                placeholder="Enter your card number" />
+                <Input type="text" name="date"
+                onChange={ this.handleInputChange }
+                format={ CardInformation.PATTERNS.DATE }
+                placeholder="Enter expire date" />
                 <Input type="text" name="name"
-                    value={this.props.valueName}
-                    onChange={this.handleInputChange}/>
+                onChange={ this.handleInputChange }
+                maxLength="17" className="upper-case"
+                placeholder="Enter your name" />
+                <Input type="text" name="cvcCode"
+                format={ CardInformation.PATTERNS.CODE }
+                onChange={ this.handleInputChange }
+                placeholder="Enter CVC code" />
                 <Input type="submit" />
-                {/* <input onChange={this.sendNumber} type="text" value={cardNumber} maxLength="19"/>
-                <input onChange={this.sendName} type="text"/>
-                <input type="text"/>
-                <input type="text"/>
-                <input type="submit" value="Done"/> */}
             </form>
         )
     }

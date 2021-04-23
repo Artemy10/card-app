@@ -1,15 +1,32 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { format } from '../helpers/formatter';
+import { formatName } from '../helpers/formatter'
 
 export default class Input extends Component {
-    handlechange = (event) => {
-        // event.target.value = 
+    handleChange = (event) => {
+        if(event.target.name !== 'name') {
+            event.target.value = format(this.props.format, event.target.value);
+    
+            this.props.onChange(event);
+        }
+        else {
+            event.target.value = formatName(event.target.value);
 
-        this.props.onChange(event);
+            this.props.onChange(event);
+        }
     }
 
     render() {
         return (
-            <input name={this.props.name} onChange={this.handlechange} type={this.props.type} value={this.props.value} />
+            <label>
+                <p>{ this.props.placeholder }</p>
+                <input name={ this.props.name }
+                onChange={ this.handleChange }
+                type={ this.props.type }
+                maxLength={ this.props.maxLength }
+                autoComplete="off" required
+                className={ this.props.className } />
+            </label>
         )
     }
 }
