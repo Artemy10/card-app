@@ -6,24 +6,12 @@ import CardConnection from './CardConnection';
 import CvcElem from './CvcElem';
 
 
-export default class CreditCard extends Component {
-    constructor(props) {
-        super(props)
-
-        this.flipTheCard = this.flipTheCard.bind(this);
-    }
-    
-    flipTheCard(e) {
-        const card = document.getElementById('card');
-        card.classList.toggle('flip');
-        console.log(e.target)
-    }
-    
+export default class CreditCard extends Component {    
     render() {
         const cardInfo = <p className="card-info">Secured credit cards are a type of credit card where the cardholder secures the card with a security deposit.</p>
         const bankLogo = <img className="bank-logo" src="/images/banklogo.png" alt="" />;
         return (
-            <div id="card" onClick={this.flipTheCard} className="credit-card">
+            <div id="card" className="credit-card">
                 <div className="flipper">
                     <div className="front-card">
                         <CardName />

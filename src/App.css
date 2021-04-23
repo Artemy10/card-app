@@ -98,11 +98,11 @@
     color: #fff;
     line-height: 9px;
     font-family: 'Lato', sans-serif;
+    margin-bottom: 10px;
 }
 .card-owner{
     color: #fff;
     font-size: 20px;
-    margin-top: 10px;
     font-weight: 500;
     line-height: 15px;
     font-family: 'Lato', sans-serif;
@@ -208,6 +208,9 @@ input:focus{
     border: 1px solid #1a7cbe;
     color: #1a7cbe;
 }
+.highlight{
+    border: 1px solid red;
+}
 
 
 
@@ -235,6 +238,7 @@ input:focus{
         height: 200px;
     }
     .content{
+        flex-direction: column;
         justify-content: flex-start;
         text-align: center;
         align-items: center;

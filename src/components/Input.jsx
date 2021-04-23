@@ -22,6 +22,8 @@ export default class Input extends Component {
                 <p>{ this.props.placeholder }</p>
                 <input name={ this.props.name }
                 onChange={ this.handleChange }
+                onFocus={ this.props.focusElem }
+                onBlur={ this.props.focusElem }
                 type={ this.props.type }
                 maxLength={ this.props.maxLength }
                 autoComplete="off" required

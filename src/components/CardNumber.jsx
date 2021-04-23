@@ -9,13 +9,13 @@ export default class CardNumber extends Component {
         if( this.props.cardNumber === '' ) {
             return (
                 <div className="card-number">
-                    <p className="empty-number-field" onClick={ this.handleChange }>**** **** **** ****</p>
+                    <span name="cardNumber" className="empty-number-field" onClick={ this.handleChange }>**** **** **** ****</span>
                 </div>
             )
         }
         return (
             <div className="card-number">
-                <span className="empty-number">{this.props.cardNumber}</span>
+                <span name="cardNumber" className="empty-number">{ this.props.cardNumber }</span>
             </div>
         )
     }
