@@ -14,8 +14,13 @@ export default class CardInformation extends Component {
         this.sendForm = this.sendForm.bind(this); // change name of functions and logistic !!!!
     }
 
-    sendForm(e) {
-        e.preventDefault();
+    sendForm(event) {
+        event.preventDefault();
+
+        let inputs = event.target.querySelectorAll('input[type="text"]');
+        for(let i = 0; i < inputs.length; i++) {
+            console.log(inputs[i].value)
+        }
     }
 
     handleInputChange = (event) => {

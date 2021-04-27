@@ -70,17 +70,9 @@
     margin-left: 25px;
     margin-top: 80px;
 }
-.empty-number{
-    color: #fff;
-    font-size: 25px;
-    line-height: 27px;
-    font-style: normal;
-    font-family: 'Quicksand', sans-serif;
-    letter-spacing: 5px;
-}
 .empty-number-field{
     color: #fff;
-    font-size: 30px;
+    font-size: 27px;
     line-height: 27px;
     font-style: normal;
     font-family: 'Quicksand', sans-serif;
@@ -211,7 +203,10 @@ input:focus{
 .highlight{
     border: 1px solid red;
 }
-
+.converter{
+    margin-left: 50px;
+    padding: 6px 0;
+}
 
 
 

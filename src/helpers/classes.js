@@ -1,5 +1,5 @@
 export function classes(object) {
-    /* 
+    /*
 
 
     1. принимает обьект,
@@ -14,4 +14,5 @@ export function classes(object) {
 
 
     */
+
 }
