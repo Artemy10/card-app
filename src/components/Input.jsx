@@ -6,16 +6,20 @@ export default class Input extends Component {
     constructor(props) {
         super(props)
 
-        this.textInput = React.createRef();
-        // this.focusTextInput = this.focusTextInput.bind(this);
+        this.state = {
+            focused: false,
+            hasValue: false
+        }
     }
 
-    // focusTextInput() {
-    //     // console.log(this.textInput.current)
-    //     this.textInput.current.focus();
-    // }
-
     handleChange = (event) => {
+        if(event.target.value.length) {
+            event.target.nextElementSibling.classList.add('has-value');
+        }
+        else {
+            event.target.nextElementSibling.classList.remove('has-value');
+        }
+
         if(event.target.name !== 'name') {
             event.target.value = format(this.props.format, event.target.value);
     
@@ -28,18 +32,30 @@ export default class Input extends Component {
         }
     }
 
+    handleFocus = (event) => {
+        event.target.nextElementSibling.classList.add('focus');
+
+        this.props.focusElem(event);
+    }
+
+    handleBlur = (event) => {
+        event.target.nextElementSibling.classList.remove('focus');
+
+        this.props.focusElem(event);
+    }
+
     render() {
         return (
-            <label>
-                <p>{ this.props.placeholder }</p>
+            <label className="x-container">
                 <input name={ this.props.name }
                 onChange={ this.handleChange }
-                onFocus={ this.props.focusElem }
-                onBlur={ this.props.focusElem }
+                onFocus={ this.handleFocus }
+                onBlur={ this.handleBlur }
                 type={ this.props.type } required
                 maxLength={ this.props.maxLength }
                 autoComplete="off"
                 className={ this.props.className } />
+                <span>{ this.props.placeholder }</span>
             </label>
         )
     }

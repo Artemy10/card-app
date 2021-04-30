@@ -1,0 +1,50 @@
+html{
+    --light-color: #7e7e7e;
+    --text-color: #333A4D;
+    --border-color: #cecece;
+}
+
+label{
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+form label span {
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    padding: 0 5px;
+    pointer-events: none;
+    color: var(--light-color);
+    transition: 150ms;
+}
+.x-input{
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 17px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: transparent;
+    outline: none;
+    color: #7e7e7e;
+    box-shadow: 0 0 15px #e0e0e0;
+    transition: 150ms;
+}
+label:hover span{
+    color: var(--text-color);
+}
+label.focus span{
+    color: #1a7cbe;
+}
+.focus{
+    font-size: 12px;
+    color: #1a7cbe;
+    background-color: #fff;
+    transform: translateY(-125%);
+}
+.has-value{
+    font-size: 12px;
+    color: #1a7cbe;
+    background-color: #fff;
+    transform: translateY(-125%);
+}

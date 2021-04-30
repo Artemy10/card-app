@@ -25,7 +25,7 @@ export default class Converter extends Component {
                 <p>You have : { convertInEuro(this.props.sum, usd) } USD</p>
                 <p>You have : { convertInEuro(this.props.sum, rub) } RUB</p>
                 <input autoComplete="off" type="text" onChange={ this.handleChangeSum } name="sum" />
-                <input type="submit" value="Submit"/>
+                <button className="submit">Submit</button>
             </form>
         )
     }

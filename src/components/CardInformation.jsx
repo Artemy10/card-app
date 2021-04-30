@@ -38,31 +38,34 @@ export default class CardInformation extends Component {
         let element = document.querySelector(`span[name=${event.target.name}]`);
         element.classList.toggle('highlight');
     }
-
+    
     render() {
         return (
             <form onSubmit={ this.sendForm } id="cardInfo">
                 <Input type="text" name="cardNumber" 
                 onChange={ this.handleInputChange }
                 format={ CardInformation.PATTERNS.CARD }
+                className="x-input"
                 focusElem={ this.highlightElement }
                 placeholder="Enter your card number" />
                 <Input type="text" name="date"
                 onChange={ this.handleInputChange }
                 focusElem={ this.highlightElement }
                 format={ CardInformation.PATTERNS.DATE }
+                className="x-input"
                 placeholder="Enter expire date" />
                 <Input type="text" name="name"
                 onChange={ this.handleInputChange }
                 focusElem={ this.highlightElement }
-                maxLength="17" className="upper-case"
+                maxLength="17" className="upper-case x-input"
                 placeholder="Enter your name" />
                 <Input type="text" name="cvcCode"
                 format={ CardInformation.PATTERNS.CODE }
+                className="x-input"
                 onChange={ this.handleInputChange }
                 focusElem={ this.flipTheCard }
                 placeholder="Enter CVC code" />
-                <Input type="submit" />
+                <button className="submit">Submit</button>
             </form>
         )
     }
