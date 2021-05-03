@@ -27,7 +27,6 @@ form label span {
     background-color: transparent;
     outline: none;
     color: #7e7e7e;
-    box-shadow: 0 0 15px #e0e0e0;
     transition: 150ms;
 }
 label:hover span{

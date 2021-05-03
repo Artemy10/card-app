@@ -2,7 +2,37 @@ import React, { Component } from 'react';
 import { convertInEuro } from '../helpers/converters';
 
 export default class Converter extends Component {
+    constructor(props) {
+        super(props)
     
+        this.state = {
+             items: [],
+             isLoaded: true,
+             error: null
+        };
+    }
+    
+    componentDidMount() {
+        fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                this.setState( {
+                    items: data,
+                    isLoaded: false
+                } )
+                // console.log(this.state.items[0].buy);
+            })
+            .catch((e) => {
+                console.log(e);
+                this.setState({
+                    isLoaded: false,
+                    error: e
+                })
+            })
+
+    }
 
     handleChangeSum = (event) => {
         event.target.value = event.target.value.replace(/[^0-9]/g, '');
@@ -12,19 +42,24 @@ export default class Converter extends Component {
     sendForm = (event) => {
         event.preventDefault();
     }
+    
 
     
     render() {
-        let eur = 0.030;
-        let usd = 0.036;
-        let rub = 2.70;
+        if(this.state.isLoaded) {
+            return (
+                <div className="converter">
+                    <span className="loading-rate">...Loading</span>
+                </div>
+            );
+        } 
         return (
             <form onSubmit={ this.sendForm } className="converter">
                 <p>On your account : { this.props.sum || '0' } UAH</p>
-                <p>You have : { convertInEuro(this.props.sum, eur) } EUR</p>
-                <p>You have : { convertInEuro(this.props.sum, usd) } USD</p>
-                <p>You have : { convertInEuro(this.props.sum, rub) } RUB</p>
-                <input autoComplete="off" type="text" onChange={ this.handleChangeSum } name="sum" />
+                <p>You have : {convertInEuro(this.props.sum, this.state.items[1].buy) } EUR</p>
+                <p>You have : {convertInEuro(this.props.sum, this.state.items[0].buy) } USD</p>
+                <p>You have : {convertInEuro(this.props.sum, this.state.items[2].buy) } RUB</p>
+                <input className="x-input" autoComplete="off" type="text" onChange={ this.handleChangeSum } name="sum" maxLength="15" />
                 <button className="submit">Submit</button>
             </form>
         )
