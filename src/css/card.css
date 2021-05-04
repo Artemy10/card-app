@@ -163,8 +163,6 @@ img{
     text-transform: capitalize;
 }
 #cardInfo{
-    width: 20%;
-    height: 250px;
     display: flex;
     flex-direction: column;
     margin-left: 50px;

@@ -1,3 +1,60 @@
+@media screen and (max-width: 2560px) {
+    label{
+        width: auto;
+    }
+    .converter p{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 1440px) {
+    .content{
+        justify-content: space-around;
+    }
+    #cardInfo{
+        width: auto;
+    }
+    .converter p{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .content{
+        flex-wrap: wrap;
+    }
+    #cardInfo{
+        margin-left: 0;
+        width: 35%;
+        text-align: center;
+    }
+    .converter{
+        margin-left: 0;
+        width: 35%;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 768px) {
+    .content{
+        flex-direction: column;
+        align-items: center;
+    }
+    #cardInfo{
+        width: 50%;
+        margin-left: 0;
+        margin-top: 50px;
+    }
+    .empty-number-field{
+        font-size: 23px;
+    }
+    .converter{
+        width: 50%;
+        margin-left: 0;
+        margin-top: 50px;
+        text-align: center;
+    }
+    .converter p{
+        font-size: 16px;
+    }
+}
 @media screen and (min-width: 2000px) {
     .content{
         width: auto;
@@ -157,6 +214,12 @@
     .content{
         width: auto;
     }
+    .converter p{
+        font-size: 14px;
+    }
+    label{
+        width: auto;
+    }
     .credit-card, .front-card, .back-card {
         width: 300px;
         height: 200px;
@@ -183,7 +246,7 @@
         margin-top: 70px;
     }
     .empty-number-field{
-        font-size: 16px;
+        font-size: 15px;
     }
     .card-footer{
         width: 80%;
