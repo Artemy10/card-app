@@ -9,6 +9,7 @@ import '../css/card.css'
 
 export default class CreditCard extends Component {    
     render() {
+        // Текстовые константы хранить в статических полях класса
         const cardInfo = <p className="card-info">Secured credit cards are a type of credit card where the cardholder secures the card with a security deposit.</p>
         const bankLogo = <img className="bank-logo" src="/images/banklogo.png" alt="" />;
         return (
@@ -24,6 +25,7 @@ export default class CreditCard extends Component {
                     <div className="back-card">
                         <span className="back-line"></span>
                         <CvcElem cvcCode={ this.props.cvcCode } />
+                        {/* Элементы разметки статические => использование переменных не нужно */}
                         {cardInfo}
                         {bankLogo}
                     </div>

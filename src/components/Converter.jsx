@@ -13,6 +13,8 @@ export default class Converter extends Component {
     }
     
     componentDidMount() {
+        // URL хранить в константе (статическое поле класса)
+        //
         fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
             .then((response) => {
                 return response.json();

@@ -17,6 +17,7 @@ export default class Content extends Component {
         }
     }
 
+    // @TODO: Одинаковые методы
     handleCardNumber = (event) => {
         this.setState({ [event.target.name]: event.target.value })
     }

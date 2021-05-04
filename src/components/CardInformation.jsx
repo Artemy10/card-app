@@ -48,17 +48,20 @@ export default class CardInformation extends Component {
                 className="x-input"
                 focusElem={ this.highlightElement }
                 placeholder="Enter your card number" />
+                
                 <Input type="text" name="date"
                 onChange={ this.handleInputChange }
                 focusElem={ this.highlightElement }
                 format={ CardInformation.PATTERNS.DATE }
                 className="x-input"
                 placeholder="Enter expire date" />
+                
                 <Input type="text" name="name"
                 onChange={ this.handleInputChange }
                 focusElem={ this.highlightElement }
                 maxLength="17" className="upper-case x-input"
                 placeholder="Enter your name" />
+
                 <Input type="text" name="cvcCode"
                 format={ CardInformation.PATTERNS.CODE }
                 className="x-input"
