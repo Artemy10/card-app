@@ -1,0 +1,236 @@
+@media screen and (min-width: 2000px) {
+    .content{
+        width: auto;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .credit-card{
+        min-width: 580px;
+        min-height: 350px;
+    }
+    .credit-card, .front-card, .back-card {
+        width: 580px;
+        height: 350px;
+    }
+    .card-name{
+        font-size: 32px;
+        margin-top: 35px;
+        margin-left: 35px;
+    }
+    .connection-elem{
+        width: 50px;
+        height: 50px;
+        top: 100px;
+        right: 40px;
+    }
+    .chip-elem{
+        width: 70px;
+        height: 50px;
+        top: 100px;
+        left: 40px;
+    }
+    .card-number{
+        margin-top: 140px;
+        margin-left: 40px;
+    }
+    .empty-number-field{
+        font-size: 42px;
+        line-height: 35px;
+    }
+    .card-footer{
+        width: 80%;
+        margin-left: 40px;
+        margin-top: 40px;
+    }
+    .card-holder{
+        font-size: 22px;
+    }
+    .card-owner{
+        font-size: 35px;
+        line-height: 40px;
+    }
+    .back-line{
+        height: 70px;
+    }
+    .cvc-elem{
+        top: 150px;
+        right: 60px;
+    }
+    .cvc-elem span{
+        font-size: 30px;
+    }
+    .cvc-code{
+        width: 70px;
+        height: 40px;
+        margin-top: 10px;
+    }
+    .bank-logo{
+        top: 160px;
+        width: 130px;
+        height: 80px;
+    }
+    .card-info{
+        font-size: 18px;
+    }
+    .card-fone{
+        width: 350px;
+        height: 200px;
+    }
+    #cardInfo{
+        width: 35%;
+        height: auto;
+    }
+    label{
+        font-size: 30px;
+    }
+    .x-input{
+        font-size: 35px;
+        padding: 20px 20px;
+    }
+    .has-value{
+       font-size: 25px;
+       transform: translateY(-130%); 
+    }
+    .focus{
+       font-size: 25px;
+       transform: translateY(-130%);     
+    }
+    form label span{
+        top: 24px;
+        left: 20px;
+    }
+    .x-container{
+        margin: 10px 0;
+    }
+    .submit{
+        margin-top: 20px;
+        font-size: 30px;
+        padding: 10px;
+    }
+    .converter{
+        width: 35%;
+        text-align: center;
+        margin-top: 50px;
+    }
+}
+@media screen and (max-width: 1440px) {
+    .content{
+        justify-content: space-around;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .content{
+        flex-wrap: wrap;
+    }
+    #cardInfo{
+        margin-left: 0;
+        width: 35%;
+        text-align: center;
+    }
+    .converter{
+        margin-left: 0;
+        width: 35%;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 768px) {
+    .content{
+        flex-direction: column;
+        align-items: center;
+    }
+    #cardInfo{
+        width: 50%;
+        margin-left: 0;
+        margin-top: 50px;
+    }
+    .empty-number-field{
+        font-size: 23px;
+    }
+    .converter{
+        width: 50%;
+        margin-left: 0;
+        margin-top: 50px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 425px) {
+    .content{
+        width: auto;
+    }
+    .credit-card, .front-card, .back-card {
+        width: 300px;
+        height: 200px;
+    }
+    .card-name{
+        font-size: 12px;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    .connection-elem{
+        width: 25px;
+        height: 25px;
+        right: 25px;
+        top: 55px;
+    }
+    .chip-elem{
+        width: 35px;
+        height: 25px;
+        left: 15px;
+        top: 55px;
+    }
+    .card-number{
+        margin-left: 15px;
+        margin-top: 70px;
+    }
+    .empty-number-field{
+        font-size: 16px;
+    }
+    .card-footer{
+        width: 80%;
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+    .card-holder{
+        font-size: 10px;
+        line-height: 10px;
+        margin-bottom: 0;
+    }
+    .card-owner{
+        font-size: 16px;
+
+    }
+    .back-line{
+        top: 25px;
+        height: 35px;
+    }
+    .cvc-elem{
+        top: 70px;
+        right: 30px;
+    }
+    .cvc-elem span{
+        font-size: 15px;
+    }
+    .cvc-code{
+        width: 37px;
+        height: 22px;
+    }
+    .bank-logo{
+        width: 60px;
+        height: 35px;
+        top: 75px;
+        left: 15px;
+    }
+    .card-info{
+        font-size: 10px;
+    }
+    .card-fone{
+        width: 200px;
+        height: 120px;
+    }
+    #cardInfo{
+        width: 95%;
+    }
+    .converter{
+        width: 95%;
+    }
+}

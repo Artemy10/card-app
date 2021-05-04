@@ -4,7 +4,8 @@ import CardNumber from './CardNumber';
 import CardFooter from './CardFooter';
 import CardConnection from './CardConnection';
 import CvcElem from './CvcElem';
-
+import '../css/form.css';
+import '../css/card.css'
 
 export default class CreditCard extends Component {    
     render() {

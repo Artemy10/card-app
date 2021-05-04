@@ -22,7 +22,6 @@ export default class Converter extends Component {
                     items: data,
                     isLoaded: false
                 } )
-                // console.log(this.state.items[0].buy);
             })
             .catch((e) => {
                 console.log(e);
@@ -41,6 +40,7 @@ export default class Converter extends Component {
 
     sendForm = (event) => {
         event.preventDefault();
+        console.log(event.target.value)
     }
     
 
@@ -59,7 +59,7 @@ export default class Converter extends Component {
                 <p>You have : {convertInEuro(this.props.sum, this.state.items[1].buy) } EUR</p>
                 <p>You have : {convertInEuro(this.props.sum, this.state.items[0].buy) } USD</p>
                 <p>You have : {convertInEuro(this.props.sum, this.state.items[2].buy) } RUB</p>
-                <input className="x-input" autoComplete="off" type="text" onChange={ this.handleChangeSum } name="sum" maxLength="15" />
+                <input className="x-input mt-20" autoComplete="off" type="text" onChange={ this.handleChangeSum } name="sum" maxLength="15" />
                 <button className="submit">Submit</button>
             </form>
         )

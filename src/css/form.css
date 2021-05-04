@@ -47,3 +47,15 @@ label.focus span{
     background-color: #fff;
     transform: translateY(-125%);
 }
+.converter{
+    width: 300px;
+    margin-left: 50px;
+    padding: 6px 0;
+}
+.converter p{
+    font-size: 20px;
+    margin: 5px 0;
+}
+.loading-rate{
+    font-size: 20px;
+}
