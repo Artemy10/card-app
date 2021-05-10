@@ -189,7 +189,11 @@
         justify-content: space-around;
     }
 }
-@media screen and (max-width: 425px) {
+@media (min-width: 425px) and (max-width: 600px) {
+    .top-section{
+        display: block;
+        margin: 0;
+    }
     .content{
         width: auto;
         flex-direction: row;
@@ -203,6 +207,7 @@
     .credit-card, .front-card, .back-card {
         width: 300px;
         height: 200px;
+        margin: 0;
     }
     .card-name{
         font-size: 12px;
