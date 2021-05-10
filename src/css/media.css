@@ -22,14 +22,17 @@
         flex-wrap: wrap;
     }
     #cardInfo{
-        margin-left: 0;
+        margin-top: 50px;
         width: 35%;
         text-align: center;
     }
     .converter{
-        margin-left: 0;
+        margin-top: 50px;
         width: 35%;
         text-align: center;
+    }
+    .qr-container{
+        margin-top: 50px;
     }
 }
 @media screen and (max-width: 768px) {
@@ -39,7 +42,6 @@
     }
     #cardInfo{
         width: 50%;
-        margin-left: 0;
         margin-top: 50px;
     }
     .empty-number-field{
@@ -47,7 +49,6 @@
     }
     .converter{
         width: 50%;
-        margin-left: 0;
         margin-top: 50px;
         text-align: center;
     }
@@ -169,50 +170,29 @@
         text-align: center;
         margin-top: 50px;
     }
+    .qr-container{
+        width: 35%;
+        margin-top: 50px;
+        font-size: 30px;
+    }
+    .qr-btn{
+        font-size: 30px;
+        width: 55%;
+    }
+    .block{
+        width: 230px;
+        height: 230px;
+    }
 }
 @media screen and (max-width: 1440px) {
     .content{
         justify-content: space-around;
     }
 }
-@media screen and (max-width: 1024px) {
-    .content{
-        flex-wrap: wrap;
-    }
-    #cardInfo{
-        margin-left: 0;
-        width: 35%;
-        text-align: center;
-    }
-    .converter{
-        margin-left: 0;
-        width: 35%;
-        text-align: center;
-    }
-}
-@media screen and (max-width: 768px) {
-    .content{
-        flex-direction: column;
-        align-items: center;
-    }
-    #cardInfo{
-        width: 50%;
-        margin-left: 0;
-        margin-top: 50px;
-    }
-    .empty-number-field{
-        font-size: 23px;
-    }
-    .converter{
-        width: 50%;
-        margin-left: 0;
-        margin-top: 50px;
-        text-align: center;
-    }
-}
 @media screen and (max-width: 425px) {
     .content{
         width: auto;
+        flex-direction: row;
     }
     .converter p{
         font-size: 14px;

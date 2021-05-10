@@ -7,11 +7,13 @@ import CvcElem from './CvcElem';
 import '../css/form.css';
 import '../css/card.css'
 
-export default class CreditCard extends Component {    
+export default class CreditCard extends Component {  
+    static PATTERNS = {
+        cardInfo: 'Secured credit cards are a type of credit card where the cardholder secures the card with a security deposit.',
+        srcBankLogo: '/images/banklogo.png'
+    }
+    
     render() {
-        // Текстовые константы хранить в статических полях класса
-        const cardInfo = <p className="card-info">Secured credit cards are a type of credit card where the cardholder secures the card with a security deposit.</p>
-        const bankLogo = <img className="bank-logo" src="/images/banklogo.png" alt="" />;
         return (
             <div id="card" className="credit-card">
                 <div className="flipper">
@@ -24,10 +26,9 @@ export default class CreditCard extends Component {
                     </div>
                     <div className="back-card">
                         <span className="back-line"></span>
-                        <CvcElem cvcCode={ this.props.cvcCode } />
-                        {/* Элементы разметки статические => использование переменных не нужно */}
-                        {cardInfo}
-                        {bankLogo}
+                        <CvcElem code={ this.props.code } />
+                        <p className="card-info">{ CreditCard.PATTERNS.cardInfo }</p>
+                        <img className="bank-logo" src={ CreditCard.PATTERNS.srcBankLogo } alt="logo-bank" />
                     </div>
                 </div>
             </div>

@@ -1,28 +1,23 @@
 import React, { Component } from 'react';
 import CreditCard from "./CreditCard";
 import CardInformation from './CardInformation';
-import Converter from './Converter' 
+import Converter from './Converter';
+import QrElement from './QrElement';
 
 export default class Content extends Component {
     constructor(props) {
         super(props)
 
-
         this.state = {
             cardNumber: '',
             name: '',
             date: '',
-            cvcCode: '',
+            code: '',
             sum: ''
         }
     }
 
-    // @TODO: Одинаковые методы
-    handleCardNumber = (event) => {
-        this.setState({ [event.target.name]: event.target.value })
-    }
-
-    handleChangeSum = (event) => {
+    handleUserData = (event) => {
         this.setState({ [event.target.name]: event.target.value })
     }
     
@@ -32,9 +27,12 @@ export default class Content extends Component {
                 <CreditCard cardNumber={ this.state.cardNumber }
                 date={ this.state.date }
                 name={ this.state.name }
-                cvcCode={this.state.cvcCode} />
-                <CardInformation cardNumberValue={ this.handleCardNumber } />
-                <Converter handleChangeSum={ this.handleChangeSum } sum={ this.state.sum } />
+                code={ this.state.code } />
+                <CardInformation cardNumberValue={ this.handleUserData } 
+                valueCode={ this.state.code } valueName={ this.state.name }
+                valueCardNumber={ this.state.cardNumber } valueDate={ this.state.date } />
+                <Converter handleChangeSum={ this.handleUserData } sum={ this.state.sum } />
+                <QrElement />
             </div>
         )
     }

@@ -7,42 +7,34 @@ export default class CardInformation extends Component {
         CODE: "###",
         DATE: "##/##"
     }
-
-    constructor(props) {
-        super(props)
     
-        this.sendForm = this.sendForm.bind(this); // change name of functions and logistic !!!!
-    }
-
-    sendForm(event) {
-        event.preventDefault();
-
-        let inputs = event.target.querySelectorAll('input[type="text"]');
-        for(let i = 0; i < inputs.length; i++) {
-            console.log(inputs[i].value)
+        saveUserData = (event) => {
+            event.preventDefault();
+        
+            // console.log(this.props.valueCardNumber)
         }
-    }
-
-    handleInputChange = (event) => {
-        this.props.cardNumberValue(event);
-    }
-
-    flipTheCard = (event) => {
-        const inputCode = document.querySelector(`span[name=${event.target.name}]`);
+        
+        handleInputChange = (event) => {
+            this.props.cardNumberValue(event);
+        }
+        
+        flipTheCard = (event) => {
+        const inputCode = document.querySelector(`span[data-name=${ event.target.name }]`);
         const card = document.getElementById('card');
-        card.classList.toggle('flip');
         inputCode.classList.toggle('highlight');
+        card.classList.toggle('flip');
     }
 
     highlightElement = (event) => {
-        let element = document.querySelector(`span[name=${event.target.name}]`);
+        let element = document.querySelector(`span[name=${ event.target.name }]`);
         element.classList.toggle('highlight');
     }
     
     render() {
         return (
-            <form onSubmit={ this.sendForm } id="cardInfo">
-                <Input type="text" name="cardNumber" 
+            <form onSubmit={ this.saveUserData } id="cardInfo">
+                <Input type="text" name="cardNumber"
+                value={ this.props.valueCardNumber } 
                 onChange={ this.handleInputChange }
                 format={ CardInformation.PATTERNS.CARD }
                 className="x-input"
@@ -50,6 +42,7 @@ export default class CardInformation extends Component {
                 placeholder="Enter your card number" />
                 
                 <Input type="text" name="date"
+                value={ this.props.valueDate }
                 onChange={ this.handleInputChange }
                 focusElem={ this.highlightElement }
                 format={ CardInformation.PATTERNS.DATE }
@@ -57,13 +50,15 @@ export default class CardInformation extends Component {
                 placeholder="Enter expire date" />
                 
                 <Input type="text" name="name"
+                value={ this.props.valueName }
                 onChange={ this.handleInputChange }
                 focusElem={ this.highlightElement }
                 maxLength="17" className="upper-case x-input"
                 placeholder="Enter your name" />
 
-                <Input type="text" name="cvcCode"
+                <Input type="password" name="code"
                 format={ CardInformation.PATTERNS.CODE }
+                value={ this.props.valueCode }
                 className="x-input"
                 onChange={ this.handleInputChange }
                 focusElem={ this.flipTheCard }

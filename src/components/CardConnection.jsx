@@ -4,8 +4,8 @@ export default class CardConnection extends Component {
     render() {
         return (
             <div className="card-connection">
-                <img className="connection-elem" src="/images/connection.png" alt="" />
-                <img className="chip-elem" src="/images/chip.png" alt="" />
+                <img className="connection-elem" src="/images/connection.png" alt="elment-connect" />
+                <img className="chip-elem" src="/images/chip.png" alt="element-chip" />
             </div>
         )
     }

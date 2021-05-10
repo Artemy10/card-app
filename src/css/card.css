@@ -4,10 +4,12 @@
     margin: 50px 0;
     padding: 50px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 .credit-card{
     perspective: 700px;
+    margin: 0 50px;
 }
 .front-card{
     background: linear-gradient(180deg, #197BBD 0%, #3391D0 100%);
@@ -40,6 +42,7 @@
 }
 .front-card, .back-card{
     backface-visibility: hidden;
+    transform: rotateX(0deg);
     position: absolute;
     top: 0;
     left: 0;
@@ -134,6 +137,7 @@ img{
     width: 40px;
     height: 25px;
     color: #fff;
+    font-size: 25px;
 }
 .cvc-code-empty{
     border: 1px dotted #fff;
@@ -165,7 +169,7 @@ img{
 #cardInfo{
     display: flex;
     flex-direction: column;
-    margin-left: 50px;
+    margin: 0 50px;
 }
 label{
     width: 300px;
@@ -181,6 +185,7 @@ label{
     background: transparent;
     color: var(--light-color);
     margin-top: 10px;
+    font-size: 18px;
 }
 input:focus{
     border: 1px solid #1a7cbe;

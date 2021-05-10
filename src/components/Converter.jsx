@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { convertInEuro } from '../helpers/converters';
 
 export default class Converter extends Component {
+    static PATTERNS = {
+        urlApiPrivatBank: 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5'
+    }
+
     constructor(props) {
         super(props)
     
@@ -12,10 +16,8 @@ export default class Converter extends Component {
         };
     }
     
-    componentDidMount() {
-        // URL хранить в константе (статическое поле класса)
-        //
-        fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
+    componentDidMount() {                              // rewrite fetch query in await method
+        fetch(Converter.PATTERNS.urlApiPrivatBank)
             .then((response) => {
                 return response.json();
             })
@@ -40,9 +42,9 @@ export default class Converter extends Component {
         this.props.handleChangeSum(event);
     }
 
-    sendForm = (event) => {
+    saveInfoForCurrency = (event) => {
         event.preventDefault();
-        console.log(event.target.value)
+        console.log(event.target[0].value)
     }
     
 
@@ -56,7 +58,7 @@ export default class Converter extends Component {
             );
         } 
         return (
-            <form onSubmit={ this.sendForm } className="converter">
+            <form onSubmit={ this.saveInfoForCurrency } className="converter">
                 <p>On your account : { this.props.sum || '0' } UAH</p>
                 <p>You have : {convertInEuro(this.props.sum, this.state.items[1].buy) } EUR</p>
                 <p>You have : {convertInEuro(this.props.sum, this.state.items[0].buy) } USD</p>

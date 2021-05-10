@@ -48,8 +48,8 @@ label.focus span{
     transform: translateY(-125%);
 }
 .converter{
-    width: 300px;
-    margin-left: 50px;
+    min-width: 300px;
+    margin: 0 50px;
     padding: 6px 0;
 }
 .converter p{
@@ -58,4 +58,7 @@ label.focus span{
 }
 .loading-rate{
     font-size: 20px;
+}
+.error{
+    border: 1px solid red;
 }
