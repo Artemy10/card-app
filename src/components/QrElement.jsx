@@ -3,7 +3,7 @@ import { classes } from '../helpers/classes';
 
 export default class QrElement extends Component {
     static PATTERNS = {
-        srcQR: 'http://qrcoder.ru/code/?https%3A%2F%2Fcard-app-git-main-artemy10.vercel.app%2F&4&0',
+        srcQR: '/images/qr-code.png',
         infoQR: 'You can share the app with your mates'
     }
 

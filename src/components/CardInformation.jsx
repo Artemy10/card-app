@@ -19,10 +19,10 @@ export default class CardInformation extends Component {
         }
         
         flipTheCard = (event) => {
-        const inputCode = document.querySelector(`span[data-name=${ event.target.name }]`);
-        const card = document.getElementById('card');
-        inputCode.classList.toggle('highlight');
-        card.classList.toggle('flip');
+            const inputCode = document.querySelector(`span[data-name=${ event.target.name }]`);
+            const card = document.getElementById('card');
+            inputCode.classList.toggle('highlight');
+            card.classList.toggle('flip');
     }
 
     highlightElement = (event) => {
