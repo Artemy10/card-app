@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { classes } from '../helpers/classes'
 
 export default class CardNumber extends Component {
     render() {
-        let spanClassName = classes( { 'filled-number-field ': !this.props.cardNumber.length, 'empty-number-field ': true } );
+        let spanClassName = 'number-field';
 
         return (
             <div className="card-number">
