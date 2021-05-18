@@ -32,7 +32,7 @@
         margin-left: 15px;
         margin-top: 65px;
     }
-    .empty-number-field{
+    .number-field{
         font-size: 16px;
         letter-spacing: 6px;
     }
@@ -128,7 +128,7 @@
         margin-left: 20px;
         margin-top: 85px;
     }
-    .empty-number-field{
+    .number-field{
         font-size: 19px;
         letter-spacing: 7px;
     }
