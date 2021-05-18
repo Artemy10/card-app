@@ -17,6 +17,27 @@ export default class Content extends Component {
         }
     }
 
+   componentDidMount() {
+       if(localStorage.cardInfo) {
+            const cardInformation = JSON.parse(localStorage.getItem('cardInfo'));
+
+            this.setState( {
+                cardNumber: `${cardInformation.cardNumber}`,
+                name: `${cardInformation.name}`,
+                date: `${cardInformation.date}`,
+                code: `${cardInformation.code}`
+            } );
+       }
+
+       if(localStorage.sum) {
+           const sum = JSON.parse(localStorage.getItem('sum'));
+
+           this.setState( {
+               sum: sum
+           } );
+       }
+   }
+
     handleUserData = (event) => {
         this.setState({ [event.target.name]: event.target.value })
     }

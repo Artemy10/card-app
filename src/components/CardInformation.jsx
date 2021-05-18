@@ -10,8 +10,24 @@ export default class CardInformation extends Component {
     
         saveUserData = (event) => {
             event.preventDefault();
-        
-            // console.log(this.props.valueCardNumber)
+
+            const elements = event.target.querySelectorAll('input');
+            const buttonSubmit = event.target.querySelector('button');
+            const cardInformation = {};
+
+            for(let i = 0; i < elements.length; i++) {
+                if(elements[i].dataset.valid === 'false') {
+                    elements[i].focus();
+                    return;
+                }
+                else {
+                    cardInformation[elements[i].name] = elements[i].value;
+                }
+            }
+
+            buttonSubmit.blur();
+
+            localStorage.setItem('cardInfo', JSON.stringify(cardInformation));
         }
         
         handleInputChange = (event) => {

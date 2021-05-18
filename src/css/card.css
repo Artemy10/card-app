@@ -73,13 +73,15 @@ img{
 }
 .empty-number-field{
     color: #fff;
-    font-size: 27px;
-    line-height: 27px;
+    font-size: 28px;
+    line-height: 30px;
     font-style: normal;
     font-family: 'Quicksand', sans-serif;
-    letter-spacing: 7px;
+    letter-spacing: 3px;
     border: 1px solid transparent;
-
+}
+.filled-number-field{
+    letter-spacing: 8px;
 }
 .card-footer{
     display: flex;

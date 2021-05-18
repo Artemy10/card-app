@@ -7,20 +7,25 @@ import { formatName } from '../helpers/formatter'
 export default class Input extends Component {
     state = {
         focused: false,
-        validation: false,
+        validation: true
     }
-    
+
     handleChange = (event) => {
         if(event.target.name !== 'name') {
-            // (this.props.value.length === this.props.format.length) ? this.setState({ validation: true }) : this.setState({ validation: false });
-            // console.log(this.props.value)
-            
             event.target.value = format(this.props.format, event.target.value);
-
+            
             this.props.onChange(event);
+            setTimeout(() => {
+                this.props.value.length === this.props.format.length ? this.setState({ validation: true }) : this.setState({ validation: false });
+            }, 0);
         }
         else {
             event.target.value = formatName(event.target.value);
+
+            setTimeout(() => {
+                this.props.value.length >= 3 ? this.setState({ validation: true }) : this.setState({ validation: false });
+
+            }, 0);
 
             this.props.onChange(event);
         }
@@ -42,7 +47,7 @@ export default class Input extends Component {
 
     render() {
         let spanClassName = classes({ 'focus ': this.state.focused,'has-value ': this.props.value});
-        let inputClassName = this.props.className;
+        let inputClassName = this.props.className + ' ' + classes({ 'error': !this.state.validation });
         return (
             <label className='x-container'>
                 <input name={ this.props.name }

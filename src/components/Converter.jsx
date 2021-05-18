@@ -44,7 +44,11 @@ export default class Converter extends Component {
 
     saveInfoForCurrency = (event) => {
         event.preventDefault();
-        console.log(event.target[0].value)
+
+        const buttonSubmit = event.target.querySelector('button');
+
+        localStorage.setItem('sum', JSON.stringify(event.target.sum.value));
+        buttonSubmit.blur();
     }
     
 
@@ -63,7 +67,7 @@ export default class Converter extends Component {
                 <p>You have : {convertInEuro(this.props.sum, this.state.items[1].buy) } EUR</p>
                 <p>You have : {convertInEuro(this.props.sum, this.state.items[0].buy) } USD</p>
                 <p>You have : {convertInEuro(this.props.sum, this.state.items[2].buy) } RUB</p>
-                <input className="x-input mt-20" autoComplete="off" type="text" onChange={ this.handleChangeSum } name="sum" maxLength="15" />
+                <input className="x-input mt-20" autoComplete="off" type="text" onChange={ this.handleChangeSum } value={ this.props.sum } name="sum" maxLength="15" />
                 <button className="submit">Submit</button>
             </form>
         )
